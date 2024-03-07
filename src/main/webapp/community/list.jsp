@@ -83,6 +83,7 @@
 
 <script type="text/javascript">
 	function cwrite() {
+		//${user}는 세션애트리뷰트에 저장한 user 입니다.
 		let yn
 		if('${user.userid}'==''){
 			yn=confirm('글쓰기는 로그인이 필요합니다. 로그인 하시겠습니까?')
