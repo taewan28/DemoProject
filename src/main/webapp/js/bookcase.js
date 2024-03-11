@@ -42,7 +42,7 @@ function tossPayInit() {
     // https://docs.tosspayments.com/reference/widget-sdk#requestpayment결제-정보
     const payObj = {
         orderId: obj.bcode +'_' + orderid,            
-        orderName: obj.title,                 
+        orderName: obj.title,
         successUrl: window.location.origin + "/DemoProject/pay/success",  
         failUrl: window.location.origin + "/DemoProject/pay/fail",        
         customerName: obj.saleuser
