@@ -97,12 +97,15 @@
 		const buyuser ='${user.userid}'
 		console.dir(payment)
 
+		//비동기 통신의 다른 방법 axios 라이브러리 : 우리 서버에 table에 정보를 insert 하기 위한 통신
+		//함수 requestPaymentSave 는 ay
 		async function requestPaymentSave(payReq){
 			const result = await axios.post('../api/pay',payReq)
 			console.log(result)
-			return result.data
+			return result.data		//응답의 data(정해진 이름) 프로퍼티를 리턴합니다.
 		}
 		
+		// 토스가 보내 준 응답 payment 값을 api/pay 로 보내고 db에 insert 할 것입니다.
 		const payReq = {bcode: payment.orderId.substring(0,7),
 						orderid: payment.orderId , 
 						amount: payment.totalAmount, 
@@ -111,8 +114,10 @@
 						paytype : payment.card.cardType + ' ' + payment.method, 
 						paymentkey:payment.paymentKey }
 		
+		//함수 requestPaymentSave 실행합니다. 데이터는 payReq
 		requestPaymentSave(payReq)
-		.then(result => {
+		.then(result => {			//then 은 요청이 성공하면 실행(axios 메소드)
+			//결제 승인 정보를 화면에 출력합니다.
 			document.querySelector('#result').innerHTML = result
 			document.querySelector('#orderId').innerHTML = payment.orderId
 			document.querySelector('#orderName').innerHTML = payment.orderName
@@ -122,7 +127,7 @@
 			document.querySelector('#paydate').innerHTML = payment.approvedAt
 			document.querySelector('#amount').innerHTML = payment.totalAmount.toLocaleString() + '원'
 		})
-		.catch(e=> {
+		.catch(e=> {		//요청에 오류 생겼을 떄 실행
 			console.error(e.response)
 			location.href='../invalid.html'
 		})
