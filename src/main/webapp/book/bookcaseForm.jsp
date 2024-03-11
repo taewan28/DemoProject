@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="../css/book.css" />
 	<link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 	<script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+
 </head>
 	<body class="is-preload">
 		<div id="page-wrapper">
@@ -29,47 +30,42 @@
 			</tr>
 			<tr>
 				<th><label>판매 코드</label></th>
-				<td>
-					<input name="bcode" required></td>
+				<td><input name="bcode" required></td>
 			</tr>
 			<tr>
 				<th><label>책 제목</label></th>
-				<td>
-					<input name="title" required></td>
+				<td><input name="title" required></td>
 			</tr>
 			<tr>
 				<th><label>도서 이미지</label></th>
-				<td>
-					<input type="file" name="cover" accept="image/*" required></td>
+				<td><input type="file" name="cover" accept="image/*"   required></td>
 			</tr>
+			
 			<tr>
 				<th><label>저자</label></th>
-				<td>
-					<input name="writer" required></td>
+				<td><input name="writer" required></td>
 			</tr>
 			<tr>
 				<th><label>출판사</label></th>
-				<td>
-					<input name="publisher" required></td>
+				<td><input name="publisher" required></td>
 			</tr>
 			<tr>
 				<th><label>출판일자</label></th>
-				<td>
-					<input name="pubdate" placeholder="YYYY-MM-DD"></td>
+				<td><input name="pubdate" placeholder="YYYY-MM-DD"></td>
 			</tr>
 			<tr>
 				<th><label>가격</label></th>
-				<td>
-					<input type="number" name="price" required></td>
+				<td><input type="number"  name="price" required></td>
 			</tr>
 			<tr>
-                <td style="text-align: center;padding: 10px;" colspan="2">
-                <button type="submit" class="book-btn">저장</button>
-                <button type="reset" class="book-btn">다시쓰기</button>
-                <button type="button" onclick="location.href='bookcase'" class="book-btn">목록</button>
-                </td>
-             </tr>
+			 	<td style="text-align: center;padding: 10px;" colspan="2">
+			 	<button type="submit" class="book-btn">저장</button>
+			 	<button type="reset" class="book-btn">다시쓰기</button>
+			 	<button type="button" onclick="location.href='bookcase'" class="book-btn">목록</button>
+			 	</td>
+			 </tr>
 			</table>
+			
 			</form>
 			
 			</section>
