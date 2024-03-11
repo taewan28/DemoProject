@@ -85,6 +85,7 @@ function selectLocalImage() {
                 // uploadPath에 역슬래시(\) 때문에 경로가 제대로 인식되지 않는 것을 슬래시(/)로 변환
                 //data.uploadPath = data.uploadPath.replace(/\\/g, '/');
 
+				//선택한 파일을 정상적으로 서버에 업로드가 됬을때 , 에디터 안에서 출력하기
                 quill.insertEmbed(range.index, 'image', "/upload/" + data.filename);  // +"/"+ data.uuid +"_"+
 				console.log(document.querySelector('#editor').innerHTML)
 				console.log(quill.root.innerHTML)
