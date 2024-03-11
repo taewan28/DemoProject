@@ -151,8 +151,8 @@
 			document.querySelector(".modal-body #saleuser").innerHTML = obj.saleuser
 			document.querySelector(".modal-body #title").innerHTML = obj.title
 			document.querySelector(".modal-body #price").innerHTML = Number(obj.price).toLocaleString("ko-KR")
-			modal.show();
 			tossPayInit();		//toss 결제창 만드는 함수.
+			modal.show();
 			}
 		})
 		
