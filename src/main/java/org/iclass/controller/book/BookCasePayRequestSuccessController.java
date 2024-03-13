@@ -39,8 +39,10 @@ public class BookCasePayRequestSuccessController implements Controller {
 //		
 		String orderId = request.getParameter("orderId");
 		int amount = Integer.parseInt(request.getParameter("amount"));
+		logger.info("가격 : {}",amount);
 		BookcaseDao dao = BookcaseDao.getInstance();
 		BookcaseBook item = dao.getOne(orderId.substring(0, 7));
+		logger.info("item 가격 : {}",item.getPrice());
 		if(item.getPrice() != amount)
 						throw new IOException("금액에 문제가 있습니다.");
 		
@@ -53,7 +55,7 @@ public class BookCasePayRequestSuccessController implements Controller {
         //amount , orderId도 필요함.
         
         // Authorization 헤더 생성
-        String secretKey = "test_sk_Z61JOxRQVEomJqGXqz1g8W0X9bAq";
+        String secretKey = "test_sk_EP59LybZ8BKZ25EdLnWJ36GYo7pR";
         String authorizationHeader = createAuthorizationHeader(secretKey);
 
         // JSON 데이터 생성
@@ -111,7 +113,7 @@ public class BookCasePayRequestSuccessController implements Controller {
 	        String credentials = secretKey + ":";
 	        String encodedCredentials = Base64.getEncoder().encodeToString(credentials.getBytes(StandardCharsets.UTF_8));
 	        return "Basic " + encodedCredentials;
-	    }
+	 }
 }
 /*
 

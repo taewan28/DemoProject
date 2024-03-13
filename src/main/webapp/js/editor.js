@@ -71,6 +71,7 @@ function selectLocalImage() {
         const file = fileInput.files[0];
         formData.append('uploadFile', file);
 
+	//quills 에디터 안에서 이미지 추가를 클릭했을 때 , 이미지를 비동기 통신으로 서버에 업로드합니다.
         $.ajax({
             type: 'post',
             enctype: 'multipart/form-data',
@@ -85,7 +86,7 @@ function selectLocalImage() {
                 // uploadPath에 역슬래시(\) 때문에 경로가 제대로 인식되지 않는 것을 슬래시(/)로 변환
                 //data.uploadPath = data.uploadPath.replace(/\\/g, '/');
 
-				//선택한 파일을 정상적으로 서버에 업로드가 됬을때 , 에디터 안에서 출력하기
+				//선택한 파일을 정상적으로 서버에 업로드가 됬을때, 에디터 안에서 출력하기
                 quill.insertEmbed(range.index, 'image', "/upload/" + data.filename);  // +"/"+ data.uuid +"_"+
 				console.log(document.querySelector('#editor').innerHTML)
 				console.log(quill.root.innerHTML)

@@ -18,9 +18,10 @@ public class NoticeFileDownloadController implements Controller {
 	public void handle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		  // 다운로드할 파일 경로 설정
-	    String filePath = "D:\\class231228\\upload";
+	    String filePath = "D:\\Class231228\\upload";
 
 	    // 다운로드할 파일명 설정
+	    
 	    String fileName = request.getParameter("uploadfile");
 	    String originfile = request.getParameter("attachfile");
 	    if(fileName==null) throw new RuntimeException();
